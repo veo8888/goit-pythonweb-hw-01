@@ -19,3 +19,8 @@ build-backend = "poetry.core.masonry.api"
 
 [project.scripts]
 f-app = "factory.factory:main"
+
+[dependency-groups]
+dev = [
+    "black (>=25.9.0,<26.0.0)"
+]

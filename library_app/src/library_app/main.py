@@ -1,3 +1,4 @@
+import logging
 from .library import Library
 from .manager import LibraryManager
 from .utils import input_required
@@ -5,12 +6,14 @@ from .utils import input_required
 
 # Main module: the entry point to the program.
 # Here instances of classes implementing the DIP and OCP principles are created.
-def main():
+def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+
     library = Library()
     manager = LibraryManager(library)
 
-    print("📚 Welcome to Simple Library!")
-    print("Enter command (add, remove, show, exit):")
+    logging.info("📚 Welcome to Simple Library!")
+    logging.info("Enter command (add, remove, show, exit):")
 
     while True:
         command = input("> ").strip().lower()
@@ -30,11 +33,13 @@ def main():
                 manager.show_books()
 
             case "exit":
-                print("👋 Bye!")
+                logging.info("👋 Bye!")
                 break
 
             case _:
-                print("⚠️  Invalid command. Try again. (add, remove, show, exit).")
+                logging.info(
+                    "⚠️  Invalid command. Try again. (add, remove, show, exit)."
+                )
 
 
 if __name__ == "__main__":
