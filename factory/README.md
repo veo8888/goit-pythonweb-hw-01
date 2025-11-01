@@ -2,20 +2,26 @@
 
 ## Project launch
 
-1. ### Go to the project folder:
+1. ### Navigate to the project directory:
 
-```ts
+```bash
 cd path/to/factory
 ```
 
 2. ### Install dependencies:
 
-```ts
+```bash
 poetry install
 ```
 
 3. ### Run the project:
 
-```ts
+```bash
 poetry run f-app
+```
+
+## Clean up the virtual environment after finishing:
+
+```bash
+poetry env remove python
 ```
